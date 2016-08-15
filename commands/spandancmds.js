@@ -1,15 +1,14 @@
-var intro="/roomintro <div><div style=\"background: url(&quot;http://i.imgur.com/AGjV485.png?1?2&quot;) center ; background-size: cover ; width: 100% ; text-align: center ; border: 9px solid #11484f ; border-bottom: none ; border-top-right-radius: 6px ; border-top-left-radius: 8px\"><div style=\"background: rgba(17 , 72 , 79 , 0.6) ; box-shadow: inset 0px 1px 1px rgba(255 , 255 , 255 , 0.8) ; padding: 10px 0px ; border-top-right-radius: 8px ; border-top-left-radius: 8px\"><img src=\"http://i.imgur.com/SXu00dv.png?1\" width=\"350\" height=\"85\"></div></div><div style=\"text-align: center ; border: 1px solid #803c6f ; border-right-color: #cd9fc4 ; border-left-color: #cd9fc4 ; background: #cd9fc4 ; background: -moz-linear-gradient(#cd9fc4 , #a57d9d) ; background: -webkit-linear-gradient(#B130F1 , #9823D3) ; background: -o-linear-gradient(#B130F1 , #9823D3) ; background: linear-gradient(#B130F1 , #9823D3) ; box-shadow: 1px 0px 0px #803c6f , -1px 0px 0px #803c6f , inset 0px -1px 1px rgba(0 , 0 , 0 , 0.4) , inset 0px 1px 1px rgba(255 , 255 , 255 , 0.8) ; width: 100% ; height: 35px\"> <a href=\"http://pastebin.com/hHyMDxcL\" style=\"display: inline-block ; padding: 4px 10px ; background: #000000; border-radius: 5px ; color: #67FAAC ; text-decoration: none ; font-size: 12px ; font-family: sans-serif ; margin-top: 4px\" target=\"_blank\">How to Play</a><button name=\"send\" value=\"!randpoke 5\">Get your team!!</button><button name=\"send\" value=\".mnmrvoice\">Gimmi Voice!!</button><button name=\"send\" value=\"!randpoke 10\">MnMR Advance</button><button name=\"send\" value=\".randmonoteam\">Random Mono Team</button></div> </div>";
 var pokemen={};
 		try {
 			pokemen = DataDownloader.getPokedex();
 		} catch (e) {
-			return this.pmReply(this.trad('err'));
+			return this.pmReply('Error importing pokedex.js');
 		}
 var cm;
         try {
             cm = DataDownloader.getMoves();
         } catch (e) {
-            return this.pmReply(this.trad('err'));
+            return this.pmReply('Error importing moves.js');
         }
 var rebuild = function(zom)
 {
