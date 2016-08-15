@@ -106,7 +106,11 @@ exports.globalPermissions = {
 * Commands configuration
 */
 
+<<<<<<< HEAD
+exports.commandTokens = ['.','-','~']; //Array of valid command characters
+=======
 exports.commandTokens = ['.']; //Array of valid command characters
+>>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 
 exports.defaultPermission = '%';
 
@@ -124,11 +128,19 @@ exports.permissionExceptions = {
 	'games': '#'
 };
 
+<<<<<<< HEAD
+exports.botguide = "https://github.com/Spandan7/Abyssal-Bot/blob/master/commands/README.md";
+
+//When you pm the bot but don't use a command, it replies you this message. Example: "Hi, I'm a bot. Use .help to view a command guide"
+//The var #USER is replaced with the username that pms it
+exports.pmhelp = "Hi #USER! I am a robot, please PM another staff member if you need help. Command guide: https://github.com/Spandan7/Abyssal-Bot/blob/master/commands/README.md";
+=======
 exports.botguide = "https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot/blob/master/commands/README.md";
 
 //When you pm the bot but don't use a command, it replies you this message. Example: "Hi, I'm a bot. Use .help to view a command guide"
 //The var #USER is replaced with the username that pms it
 exports.pmhelp = "Hi #USER! I am a robot, please PM another staff member if you need help. Command guide: https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot/blob/master/commands/README.md";
+>>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 
 /*
 * Language configuration

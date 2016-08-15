@@ -36,6 +36,13 @@ var data = exports.data = [
 	{
 		url: "https://play.pokemonshowdown.com/data/aliases.js?" + datenow,
 		file: "aliases.js"
+<<<<<<< HEAD
+	},
+	{
+		url:"https://play.pokemonshowdown.com/data/moves.js?" + datenow, 
+		file: "moves.js"
+=======
+>>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 	}
 ];
 
@@ -115,6 +122,13 @@ exports.getFormats = function () {
 exports.getFormatsData = function () {
 	return require("./data/formats-data.js").BattleFormatsData;
 };
+<<<<<<< HEAD
+exports.getMoves = function () 
+{
+	return require("./data/moves.js").BattleMovedex;
+};
+=======
+>>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 
 exports.getLearnsets = function () {
 	return require("./data/learnsets-g6.js").BattleLearnsets;
