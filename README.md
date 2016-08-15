@@ -1,15 +1,8 @@
-<<<<<<< HEAD
+
 ﻿Abyssal Bot - A fork of Ecuacion's [Pokemon Showdown Bot for Node](https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot)
 =======
 ﻿Pokemon Showdown Bot for Node
->>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 ====================
-
-[![Build Status](https://travis-ci.org/Ecuacion/Pokemon-Showdown-Node-Bot.svg)](https://travis-ci.org/Ecuacion/Pokemon-Showdown-Node-Bot)
-[![Dependency Status](https://david-dm.org/Ecuacion/Pokemon-Showdown-Node-Bot.svg)](https://david-dm.org/Ecuacion/Pokemon-Showdown-Node-Bot)
-[![devDependency Status](https://david-dm.org/Ecuacion/Pokemon-Showdown-Node-Bot/dev-status.svg)](https://david-dm.org/Ecuacion/Pokemon-Showdown-Node-Bot#info=devDependencies)
-[![Version](https://img.shields.io/badge/version-0.7.2-orange.svg)](https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot#pokemon-showdown-bot-for-node)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 This is a [Pokemon Showdown](https://github.com/Zarel/Pokemon-Showdown) bot written in JavaScript for [Node](http://nodejs.org/)
 
