@@ -8,11 +8,10 @@ exports.commands = {
 	credits: 'about',
 	bot: 'about',
 	about: function () {
-<<<<<<< HEAD
 		this.restrictReply("I\'m a Pokemon Showdown Bot written in JavaScript by **Ecuacion**, and modified for the Random Other Metagame Server by **Spandan.**");
-=======
+
 		this.restrictReply(this.trad('about') + ". " + this.trad('author') + ": " + Settings.package.author.name + ". (" + Settings.package.homepage + ")", 'info');
->>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
+
 	},
 
 	git: 'github',
