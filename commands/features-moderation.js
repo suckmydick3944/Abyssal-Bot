@@ -101,11 +101,8 @@ exports.commands = {
 				alreadyAdded.push(tarUser);
 				continue;
 			}
-<<<<<<< HEAD
 			this.say(tarRoom, '/ban ' + tarUser + ', ' + this.trad('bu'));
-=======
 			this.say(tarRoom, '/roomban ' + tarUser + ', ' + this.trad('bu'));
->>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 			this.sclog("Blacklisted: " + tarUser);
 			added.push(tarUser);
 		}
