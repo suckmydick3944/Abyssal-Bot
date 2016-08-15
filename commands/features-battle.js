@@ -187,11 +187,8 @@ exports.commands = {
 	botteams: 'team',
 	teams: 'team',
 	team: function (arg, by, room, cmd) {
-<<<<<<< HEAD
 		if (!this.isRanked(Tools.getGroup('voice'))) return false;
-=======
 		if (!this.isRanked(Tools.getGroup('admin'))) return false;
->>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 		if (!arg) return this.reply(this.trad('u1') + ': ' + this.cmdToken + cmd + ' ' + this.trad('u2'));
 		arg = arg.split(',');
 		var opt = toId(arg[0]);
