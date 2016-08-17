@@ -109,7 +109,7 @@ Contributors:
  - [Spudling](https://github.com/Spudling) (German translation)
 
 Edits for Abyssal Bot:
- - [Spandan](https://github.com/Spandan7)
+ - [Spandan](https://github.com/Spandamn)
 
 =======
 Part of this code is imported from other developments, so credits to:
