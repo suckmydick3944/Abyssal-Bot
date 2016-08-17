@@ -313,7 +313,6 @@ Developing commands for GroupChats feature
 
  - `ignoregroupchat [groupchat]` - temporarily ignore a groupchat (to leave a groupchat). Then you must edit the config to make it permanent
  - `unignoregroupchat [groupchat]` - unignore a groupchat
-<<<<<<< HEAD
 
 -------------------------------------------------
  Commands by Spandan
@@ -327,5 +326,3 @@ Developing commands for GroupChats feature
  - `gt <move>` - Returns the contest type of the move.
  - `mnm <mega stone> <pokemon>` - Returns details of the Mix and Mega Evolved Pokemon.
  - `ns <nature> <Pokemon>` - Returns Stats of the Nature Swapped Pokemon.
-=======
->>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
