@@ -1,8 +1,6 @@
 
 ﻿Abyssal Bot - A fork of Ecuacion's [Pokemon Showdown Bot for Node](https://github.com/Ecuacion/Pokemon-Showdown-Node-Bot)
 =======
-﻿Pokemon Showdown Bot for Node
-====================
 
 This is a [Pokemon Showdown](https://github.com/Zarel/Pokemon-Showdown) bot written in JavaScript for [Node](http://nodejs.org/)
 
@@ -110,12 +108,10 @@ Contributors:
  - [panpawn](https://github.com/panpawn) (YouTube feature, fixes)
  - [Spudling](https://github.com/Spudling) (German translation)
 
-<<<<<<< HEAD
 Edits for Abyssal Bot:
  - [Spandan](https://github.com/Spandan7)
 
 =======
->>>>>>> e1c56a3adaccf855415a254245d052f8656afe62
 Part of this code is imported from other developments, so credits to:
 		
  - Quinella, [Morfent](https://github.com/Morfent) and [TalkTakesTime](https://github.com/TalkTakesTime) developers of [Pokemon-Showdown-Bot](https://github.com/TalkTakesTime/Pokemon-Showdown-Bot)
