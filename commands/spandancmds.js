@@ -1,6 +1,7 @@
 /*
 * These are the commands that I made.
 * Most of them are for Other Metagames (Nature Swap, Enchanted Items, etc)
+* Dont mind the variable names, they just randomly come out of my mind
 */
 var pokemen={};
 		try {
