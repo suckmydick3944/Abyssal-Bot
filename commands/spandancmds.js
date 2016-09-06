@@ -560,6 +560,34 @@ exports.commands = {
 			this.say(room,"Usage: ``.note <Message>``. Logs a message to the Bot's console, so that the owner can read it. Use it to log bugs reports to the console when the owner is away.");
 		}
 	},
+	fuse: function(arg, by, room) {
+        var text = "";
+        var separated = arg.split(",");
+        var name = (("" + separated[0]).trim()).toLowerCase();
+        var name2 = (("" + separated[1]).trim()).toLowerCase();
+        name = rebuild(name);
+        name2 = rebuild(name2);
+
+        if (pokemen[name] == undefined || pokemen[name2] == undefined)
+        {
+                this.say(room, "Error: Pokemon not found")
+        }
+        else {
+                var baseStats = {};
+                baseStats['avehp'] = Math.floor((pokemen[name].baseStats.hp + pokemen[name2].baseStats.hp) / 2);
+                baseStats['aveatk'] = Math.floor((pokemen[name].baseStats.atk + pokemen[name2].baseStats.atk) / 2);
+                baseStats['avedef'] = Math.floor((pokemen[name].baseStats.def + pokemen[name2].baseStats.def) / 2);
+                baseStats['avespa'] = Math.floor((pokemen[name].baseStats.spa + pokemen[name2].baseStats.spa) / 2);
+                baseStats['avespd'] = Math.floor((pokemen[name].baseStats.spd + pokemen[name2].baseStats.spd) / 2);
+                baseStats['avespe'] = Math.floor((pokemen[name].baseStats.spe + pokemen[name2].baseStats.spe) / 2);
+                var type = pokemen[name].types[0];
+                if (pokemen[name].types[0] != pokemen[name2].types[0])
+                        type = type + '/' + pokemen[name2].types[0];
+                var bst = baseStats['avehp'] + baseStats['aveatk'] + baseStats['avedef'] + baseStats['avespa'] + baseStats['avespd'] + baseStats['avespe'];
+                text = "Stats: " + baseStats['avehp'] + "/" + baseStats['aveatk'] + "/" + baseStats['avedef'] + "/" + baseStats['avespa'] + "/" + baseStats['avespd'] + "/" + baseStats['avespe'] + " **BST**:" + bst + " **Type:** " + type;
+                this.say(room, text);
+        }
+},
 	'ei':function(arg,by,room)
 	{
 		var abilities =
