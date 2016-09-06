@@ -1,3 +1,7 @@
+/*
+* These are the commands that I made.
+* Most of them are for Other Metagames (Nature Swap, Enchanted Items, etc)
+*/
 var pokemen={};
 		try {
 			pokemen = DataDownloader.getPokedex();
@@ -95,14 +99,6 @@ exports.commands = {
 		}
 		else
 		{
-			/*var pokeobj = pokemen[rebuild(poke)];
-			var natureobj = pokeobj[natures[nat]];
-			if(natures[nat]['swap'])
-			{
-				temp = natureobj['plus'];
-				pokeobj[natureobj['plus']] = natureobj['minus'];
-				pokeobj[natureobj['minus']] = temp;
-			}*/
 			var pokeobj = {
 				hp:""+pokemen[p].baseStats.hp,
 				atk:""+pokemen[p].baseStats.atk,
@@ -812,25 +808,19 @@ exports.commands = {
 	        else
 	        	text+="The Enchanted Item for "+arg+" is "+abilities[abe]+".";
 	        this.say(room,text);
-    	/*}
-    	else
-    	{
-    		text+="Usage: ``.ei <Ability>";
-    		this.say(room,text);
-    	}*/
 	},
     'ie':function(arg,by,room)
     {
         var items =
         {
-                airballoon:'Aerilate',/* 'airballoon*/
-                apicotberry:'Adaptability',/* 'apicotberry*/
-                premierball:'Aftermath',/* 'premierball*/
-                watergem:'Analytic',/* 'watergem*/
-                blackbelt:'Anticipation',/* 'blackbelt*/
-                buggem:'Arena Trap',/* 'buggem*/
-                blackglasses:'Aroma Veil',/* 'blackglasses*/
-                blacksludge:'Aura Break',/* 'blacksludge*/
+                airballoon:'Aerilate',
+                apicotberry:'Adaptability',
+                premierball:'Aftermath',
+                watergem:'Analytic',
+                blackbelt:'Anticipation',
+                buggem:'Arena Trap',
+                blackglasses:'Aroma Veil',
+                blacksludge:'Aura Break',//Will remove these l8r
                 brightpowder:'Bad Dreams',/* 'brightpowder*/
                 cellbattery:'Battle Armor',/* 'cellbattery*/
                 charcoal:'Big Pecks',/* 'charcoal*/
@@ -1022,11 +1012,5 @@ exports.commands = {
             else
                 text+="The item "+arg+" gives the ability "+items[abe]+".";
             this.say(room,text);
-        /*}
-        else
-        {
-            text+="Usage: ``.ei <Ability>";
-            this.say(room,text);
-        }*/
     },
 };
