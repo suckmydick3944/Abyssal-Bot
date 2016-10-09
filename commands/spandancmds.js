@@ -815,7 +815,8 @@ exports.commands = {
         crossevolve: function(arg, by, room, cmd) 
         {
             var pokes = arg.split(","),text="";
-            var poke1 = pokemen[rebuild(pokes[0])], poke2 = pokemen[rebuild(pokes[1])];
+            var pokeobj = pokemen;
+            var poke1 = pokeobj[toId(pokes[0])], poke2 = pokeobj[toId(pokes[1])];
             if(!poke1 || !poke2) 
             {
                 text+="Error: Pokemon not found";
@@ -835,53 +836,59 @@ exports.commands = {
                 this.say(room,text);
                 return;
             }
-            var changes = {stats:{},type:[]};
-            changes.ability = poke2.abilities['0']+((poke2.abilities["1"])?("/"+poke2.abilities["1"]):"")+((poke2.abilities["H"])?"/"+poke2.abilities["H"]:"");
-            for(var i in poke2.baseStats)
-                changes.stats[i] = poke2.baseStats[i] - prevo.baseStats[i];
-            var newType = poke1.types;
+            var stats = {};
+            var ability = poke2.abilities['0']+((poke2.abilities["1"])?("/"+poke2.abilities["1"]):"")+((poke2.abilities["H"])?"/"+poke2.abilities["H"]:"");
+            for (var statName in poke1.baseStats) {
+                var stat = poke1.baseStats[statName]; 
+                stat += poke2.baseStats[statName] - prevo.baseStats[statName];
+                stats[statName] = stat;
+            }
+            var typ1 = "",typ2="";
+            typ1 = typ1+poke1.types[0];
+            if(poke1.types[1]) typ2 = typ2+poke1.types[1];
+            
             if (poke1.types.length > 1)  {
                 // Primary type
                 if (prevo.types[0] !== poke2.types[0]) {
-                    newType[0] = poke2.types[0];
+                    typ1 = poke2.types[0];
                 }
                 // Possible secondary typing
                 if (poke2.types.length > 1) {
                     if (prevo.types[1] !== poke2.types[1]) {
-                        newType[1] = poke2.types[1];
+                        typ2 = poke2.types[1];
                     }
                 }
-            } else {
+            } 
+            else {
                 if (prevo.types[0] !== poke2.types[0]) {
-                    newType[0] = poke2.types[0];
+                    typ1 = poke2.types[0];
                 }
                 if (poke2.types.length > 1) {
                     if (prevo.types.length < 2 || prevo.types[1] !== poke2.types[1]) {
-                        newType.push(poke2.types[1]);
+                        typ2 = poke2.types[1];
                     }
                 }
             }
-            changes.typo = newType;
-            for(var i in changes.stats)
+            for(var i in stats)
             {
-                if(changes.stats[i]<=0 || changes.stats[i]>255)
+                if(stats[i]<=0 || stats[i]>255)
                 {
-                    this.say(room,"Error: A stat goes above 255 or below 0.")
+                    this.say(room,"Error: A stat goes above 255 or less than or equal to 0.")
                     return;
                 }
             }
             text+=" __"+poke1.species+"__ ===> __"+poke2.species+"__: Stats:";
-            for(var i in changes.stats)
+            for(var i in stats)
             {   
                 if(i!='spe')
-                    text+=(poke1.baseStats[i]+changes.stats[i])+"/";
+                    text+=+stats[i]+"/";
                 else
-                    text+=(poke1.baseStats.spe+changes.stats.spe);
+                    text+=stats.spe;
             }
-            text+=" Abilities:"+changes.ability+" Type:"+changes.typo[0];
-            if(changes.typo[1]) text+= "/"+ changes.typo[1];
+            text+=" Abilities:"+ability+" Type:"+typ1;
+            if(typ2!="") text+="/"+typ2;
             this.say(room,text);
-        },
+    },
     'ie':function(arg,by,room)
     {
         var items =
