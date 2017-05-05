@@ -326,3 +326,4 @@ Developing commands for GroupChats feature
  - `gt <move>` - Returns the contest type of the move.
  - `mnm <mega stone> <pokemon>` - Returns details of the Mix and Mega Evolved Pokemon.
  - `ns <nature> <Pokemon>` - Returns Stats of the Nature Swapped Pokemon.
+ - `crossevo <pokemon1>, <pokemon2>` - Returns Stats of the Cross Evolved Pokemon.
