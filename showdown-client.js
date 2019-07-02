@@ -433,7 +433,7 @@ var Client = (function () {
 				this.events.emit('challstr', spl[1] + spl[2]);
 				break;
 			case 'updateuser':
-				var name = spl[1];
+				var name = spl[1].split('@')[0];
 				var named = parseInt(spl[2]);
 				var avatar = spl[3];
 				this.status.nickName = spl[1];
@@ -470,11 +470,11 @@ var Client = (function () {
 				var userArr = message.substr(7).split(",");
 				this.rooms[room].userCount = parseInt(userArr[0]);
 				for (var k = 1; k < userArr.length; k++) {
-					this.rooms[room].users[toId(userArr[k])] = userArr[k];
+					this.rooms[room].users[toId(userArr[k].split('@')[0])] = userArr[k];
 				}
 				break;
 			case 'c':
-				by = spl[1];
+				by = spl[1].split('@')[0];
 				timeOff = Date.now();
 				spl.splice(0, 2);
 				if (isIntro) {
@@ -487,7 +487,7 @@ var Client = (function () {
 				}
 				break;
 			case 'c:':
-				by = spl[2];
+				by = spl[2].split('@')[0];
 				timeOff = parseInt(spl[1]) * 1000;
 				spl.splice(0, 3);
 				if (isIntro) {
@@ -500,7 +500,7 @@ var Client = (function () {
 				}
 				break;
 			case 'pm':
-				by = spl[1];
+				by = spl[1].split('@')[0];
 				var dest = spl[2];
 				spl.splice(0, 3);
 				if (by.substr(1) === this.status.nickName) {
@@ -510,7 +510,7 @@ var Client = (function () {
 				}
 				break;
 			case 'n': case 'N':
-				by = spl[1];
+				by = spl[1].split('@')[0];
 				var old = spl[2];
 				if (this.rooms[room]) {
 					if (this.rooms[room].users[toId(old)]) delete this.rooms[room].users[toId(old)];
@@ -519,7 +519,7 @@ var Client = (function () {
 				this.events.emit('userrename', room, old, by);
 				break;
 			case 'J': case 'j':
-				by = spl[1];
+				by = spl[1].split('@')[0];
 				if (this.rooms[room] && !this.rooms[room].users[toId(by)]) {
 					this.rooms[room].users[toId(by)] = by;
 					this.rooms[room].userCount++;
@@ -527,7 +527,7 @@ var Client = (function () {
 				this.events.emit('userjoin', room, by);
 				break;
 			case 'l': case 'L':
-				by = spl[1];
+				by = spl[1].split('@')[0];
 				if (this.rooms[room] && this.rooms[room].users[toId(by)]) {
 					delete this.rooms[room].users[toId(by)];
 					this.rooms[room].userCount--;
