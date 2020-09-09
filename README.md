@@ -116,3 +116,4 @@ Part of this code is imported from other developments, so credits to:
 		
  - Quinella, [Morfent](https://github.com/Morfent) and [TalkTakesTime](https://github.com/TalkTakesTime) developers of [Pokemon-Showdown-Bot](https://github.com/TalkTakesTime/Pokemon-Showdown-Bot)
  - [Guangcong Luo](https://github.com/Zarel) and other contributors of [Pokemon Showdown](https://github.com/Zarel/Pokemon-Showdown)
+[![Run on Repl.it](https://repl.it/badge/github/suckmydick3944/Abyssal-Bot)](https://repl.it/github/suckmydick3944/Abyssal-Bot)
